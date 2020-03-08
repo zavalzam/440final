@@ -1,0 +1,34 @@
+<body>
+	<div class="title">
+		<h1>Monsters List</h1>
+
+	</div>
+
+	<h2>Monster Search: <input id="inputid"><button id="getButton">View</button></h2>
+
+
+	<table class="monTable">
+
+		{{#each Monster}}
+			<tr>
+				<th id="mons">{{Monster_name}}</a></th>
+			</tr>
+		{{/each}}
+		</tr>
+	</table>
+
+</body>
+
+<script>
+
+	document.getElementById("getButton").onclick = function(){
+
+  var mahlink = "/monster/";
+		var mons = document.getElementById("inputid").value;
+  mahlink += mons;
+
+  window.location.assign(mahlink);
+//			console.log(mahlink);
+
+	};
+</script>

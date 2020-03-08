@@ -1,0 +1,27 @@
+<body>
+	<div class="title">
+		<h1>View Your Character</h1>
+
+	<h1>Player ID: <input id="inputid"></h1>
+</div>
+
+	<div class="directory">
+		<button id="getButton">View</button>
+	</div>
+
+
+	<script>
+
+		document.getElementById("getButton").onclick = function(){
+
+      var mahlink = "/char_view/";
+			var PCid = document.getElementById("inputid").value;
+      mahlink += PCid;
+
+      window.location.assign(mahlink);
+//			console.log(mahlink);
+
+		};
+	</script>
+
+</body>

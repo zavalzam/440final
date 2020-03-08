@@ -1,0 +1,75 @@
+<body>
+	<div class="content">
+
+		<h1>Create a Character!</h1>
+
+		<ul class="items">
+			<h2>Player Name: <input type="text" id="pName"></h2>
+			<h2>Character Name: <input type="text" id="cName"></h2>
+			<h2>Level: <input type="text" id="level"></h2>
+			<h2>Armor Class: <input type="text" id="armor"></h2>
+			<h2>Strength: <input type="text" id="strength"></h2>
+			<h2>Dexterity: <input type="text" id="dex"></h2>
+			<h2>Wisdom: <input type="text" id="wisdom"></h2>
+			<h2>Intelligence: <input type="text" id="intell"></h2>
+			<h2>Constitution: <input type="text" id="const"></h2>
+			<h2>Charisma: <input type="text" id="charisma"></h2>
+			<h2>Max HP: <input type="text" id="maxhp"></h2>
+			<h2>Class:
+				<select id="pcclass">
+					<option type="Barbarian">Barbarian</option>
+					<option type="Bard">Bard</option>
+					<option type="Cleric">Cleric</option>
+					<option type="Druid">Druid</option>
+					<option type="Fighter">Fighter</option>
+					<option type="Monk">Monk</option>
+					<option type="Paladin">Paladin</option>
+					<option type="Ranger">Ranger</option>
+					<option type="Rogue">Rogue</option>
+					<option type="Sorcerer">Sorcerer</option>
+					<option type="Warlock">Warlock</option>
+					<option type="Wizard">Wizard</option>
+				</select>
+			</h2>
+			<h2>Race:
+				<select id="race">
+					{{#each results }}
+						<option type="{{Race_name}}">{{Race_name}}</option>
+					{{/each}}
+				</select>
+			</h2>
+			<div class="create">
+				<button id="createButton">Create</button>
+			</div>
+		</ul>
+	</div>
+
+	<script>
+
+		document.getElementById("createButton").onclick = function(){
+
+      var mahlink = "/char_create/";
+
+			var pname = document.getElementById("pName").value;
+			var cname = document.getElementById("cName").value;
+			var armorclass = document.getElementById("armor").value;
+			var level = document.getElementById("level").value;
+			var str = document.getElementById("strength").value;
+			var dex = document.getElementById("dex").value;
+			var wis = document.getElementById("wisdom").value;
+			var intell = document.getElementById("intell").value;
+			var con = document.getElementById("const").value;
+			var cha = document.getElementById("charisma").value;
+			var maxhp = document.getElementById("maxhp").value;
+			var classname = document.getElementById("pcclass").value;
+			var race = document.getElementById("race").value;
+
+     mahlink += cname + "/" + cname + "123/" + race + "/" + level + "/" + classname + "/" + maxhp + "/" + maxhp + "/" + armorclass + "/" + "30" + "/" + "1" + "/" + str + "/" + dex + "/" + con + "/" + intell + "/" + wis + "/" + cha + "/" + pname + "/" + "nothing";
+
+      window.location.assign(mahlink);
+//			console.log(mahlink);
+
+		};
+	</script>
+
+</body>
