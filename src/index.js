@@ -55,6 +55,17 @@ app.get('/', connectDb, function(req, res) {
 });
 
 
+app.get('/movies', connectDb, function(req, res, next) {
+
+  req.db.query('SELECT * FROM Movie', function(err, Movies) {
+    res.render('movies', {Movies});
+    if (err) throw error;
+  })
+  close(req);
+});
+
+
+/*
 app.get('/spells', connectDb, function(req, res, next) {
 
   req.db.query('SELECT * FROM Spells', function(err, Spells) {
@@ -242,7 +253,7 @@ app.get('/char_view', connectDb, function(req, res, next) {
 
   close(req);
 });
-
+*/
 
 
 /**
