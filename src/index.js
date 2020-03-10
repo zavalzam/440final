@@ -64,6 +64,41 @@ app.get('/movies', connectDb, function(req, res, next) {
   close(req);
 });
 
+app.get('/shows', connectDb, function(req, res, next) {
+
+  req.db.query('SELECT * FROM TvShow', function(err, Shows) {
+    res.render('Shows', {Shows});
+    if (err) throw error;
+  })
+  close(req);
+});
+
+app.get('/books', connectDb, function(req, res, next) {
+
+  req.db.query('SELECT * FROM Book', function(err, Books) {
+    res.render('Books', {Books});
+    if (err) throw error;
+  })
+  close(req);
+});
+
+app.get('/games', connectDb, function(req, res, next) {
+
+  req.db.query('SELECT * FROM VideoGame', function(err, Games) {
+    res.render('Games', {Games});
+    if (err) throw error;
+  })
+  close(req);
+});
+
+app.get('/franchises', connectDb, function(req, res, next) {
+
+  req.db.query('SELECT * FROM Franchise', function(err, Franchises) {
+    res.render('Franchises', {Franchises});
+    if (err) throw error;
+  })
+  close(req);
+});
 
 /*
 app.get('/spells', connectDb, function(req, res, next) {
