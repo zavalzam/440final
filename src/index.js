@@ -58,7 +58,7 @@ app.get('/', connectDb, function(req, res) {
 app.get('/movies', connectDb, function(req, res, next) {
 
   req.db.query('SELECT * FROM Movie', function(err, Movies) {
-    res.render('movies', {Movies});
+    res.render('Movies', {Movies});
     if (err) throw error;
   })
   close(req);
