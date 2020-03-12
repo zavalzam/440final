@@ -73,7 +73,7 @@ app.get('/movies/:MovieID', connectDb, function(req, res, next) {
       res.render('404');
     } else {
       console.log(Movies);
-      res.render('renderMovie', {Movies});
+      res.render('RenderMovie', {Movies});
     }
     close(req);
   });
