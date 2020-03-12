@@ -71,7 +71,7 @@ app.get('/searchmovies', connectDb, function(req, res, next) {
 app.get('/searchmovies/:SearchName', connectDb, function(req, res, next) {
   let SN = req.params.SearchName;
   console.log(SN);
-  myquery = "SELECT * FROM Movie WHERE Title LIKE '%?%' ";
+  myquery = "SELECT * FROM Movie WHERE Title LIKE '%uranian%'"";
   console.log(myquery);
   req.db.query(myquery, [SN], function(err, Movies) {
     if (err) return next(err);
