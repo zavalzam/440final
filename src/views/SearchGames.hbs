@@ -1,0 +1,91 @@
+<body>
+	<div class="title">
+		<h1>Search For Games</h1>
+</div>
+
+
+
+
+	<div class="button">
+		<button type="button"><a href="/">Home</a></button>
+	</div>
+</body>
+
+<script>
+
+	document.getElementById("spellbookbtn").onclick = function(){
+		var mahlink = window.location.pathname;
+		mahlink += "/spellbook";
+		window.location.assign(mahlink);
+	};
+	document.getElementById("levelbtn").onclick = function(){
+			var level = document.getElementById("level").value;
+			var mahlink = window.location.pathname;
+			mahlink += "/update/" + "PC_level/" + level;
+      window.location.assign(mahlink);
+	};
+	document.getElementById("acbtn").onclick = function(){
+			var ac = document.getElementById("armor").value;
+			var mahlink = window.location.pathname;
+			mahlink += "/update/" + "Armor_Class/" + ac;
+			window.location.assign(mahlink);
+	};
+	document.getElementById("strbtn").onclick = function(){
+			var str = document.getElementById("strength").value;
+			var mahlink = window.location.pathname;
+			mahlink += "/update/" + "Strength/" + str;
+			window.location.assign(mahlink);
+	};
+	document.getElementById("dexbtn").onclick = function(){
+			var dex = document.getElementById("dex").value;
+			var mahlink = window.location.pathname;
+			mahlink += "/update/" + "Dexterity/" + dex;
+			window.location.assign(mahlink);
+	};
+	document.getElementById("wisbtn").onclick = function(){
+			var wis = document.getElementById("wisdom").value;
+			var mahlink = window.location.pathname;
+			mahlink += "/update/" + "Wisdom/" + wis;
+			window.location.assign(mahlink);
+	};
+	document.getElementById("intbtn").onclick = function(){
+			var intell = document.getElementById("intell").value;
+			var mahlink = window.location.pathname;
+			mahlink += "/update/" + "Intelligence/" + intell;
+			window.location.assign(mahlink);
+	};
+	document.getElementById("conbtn").onclick = function(){
+		  var cons = document.getElementById("const").value;
+			var mahlink = window.location.pathname;
+			mahlink += "/update/" + "Constitution/" + cons;
+			window.location.assign(mahlink);
+	};
+	document.getElementById("chabtn").onclick = function(){
+			var cha = document.getElementById("charisma").value;
+			var mahlink = window.location.pathname;
+			mahlink += "/update/" + "Charisma/" + cha;
+			window.location.assign(mahlink);
+	};
+	document.getElementById("maxhpbtn").onclick = function(){
+			var maxhp = document.getElementById("maxhp").value;
+			var mahlink = window.location.pathname;
+			mahlink += "/update/" + "Max_HP/" + maxhp;
+			window.location.assign(mahlink);
+	};
+	document.getElementById("curhpbtn").onclick = function(){
+			var curhp = document.getElementById("currhp").value;
+			var mahlink = window.location.pathname;
+			mahlink += "/update/" + "Current_HP/" + curhp;
+			window.location.assign(mahlink);
+	};
+	document.getElementById("notesbtn").onclick = function(){
+			var notes = document.getElementById("description").value;
+			var mahlink = window.location.pathname;
+			mahlink += "/update/" + "Notes/" + notes;
+			window.location.assign(mahlink);
+	};
+
+
+
+
+</script>

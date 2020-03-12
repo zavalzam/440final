@@ -64,6 +64,22 @@ app.get('/movies', connectDb, function(req, res, next) {
   close(req);
 });
 
+app.get('/searchmovies', connectDb, function(req, res, next) {
+  res.render(SearchMovies);
+});
+
+app.get('/searchshows', connectDb, function(req, res, next) {
+  res.render(SearchShows);
+});
+
+app.get('/searchbooks', connectDb, function(req, res, next) {
+  res.render(SearchBooks);
+});
+
+app.get('/searchgames', connectDb, function(req, res, next) {
+  res.render(SearchGames);
+});
+
 app.get('/movies/:MovieID', connectDb, function(req, res, next) {
   let MovieID = req.params.MovieID;
   console.log(MovieID);
