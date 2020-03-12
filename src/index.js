@@ -100,6 +100,25 @@ app.get('/franchises', connectDb, function(req, res, next) {
   close(req);
 });
 
+app.get('/actors', connectDb, function(req, res, next) {
+
+  req.db.query('SELECT * FROM Actor', function(err, Actors) {
+    res.render('Actors', {Actors});
+    if (err) throw error;
+  })
+  close(req);
+});
+
+app.get('/directors', connectDb, function(req, res, next) {
+
+  req.db.query('SELECT * FROM Director', function(err, Directors) {
+    res.render('Directors', {Directors});
+    if (err) throw error;
+  })
+  close(req);
+});
+
+
 /*
 app.get('/spells', connectDb, function(req, res, next) {
 
