@@ -102,7 +102,7 @@ app.get('/searchbooks', connectDb, function(req, res, next) {
   res.render('SearchBooks');
 });
 
-app.get('/searchnooks/name/:SearchName', connectDb, function(req, res, next) {
+app.get('/searchbooks/name/:SearchName', connectDb, function(req, res, next) {
   let SN = req.params.SearchName;
   console.log(SN);
   var myquery = "SELECT * FROM Book WHERE Title LIKE '%" + SN + "%'";
