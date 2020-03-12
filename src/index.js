@@ -68,10 +68,10 @@ app.get('/searchmovies', connectDb, function(req, res, next) {
   res.render('SearchMovies');
 });
 
-app.get('/searchmovies/:SearchName', connectDb, function(req, res, next) {
+app.get('/searchmovies/name/:SearchName', connectDb, function(req, res, next) {
   let SN = req.params.SearchName;
   console.log(SN);
-  myquery = "SELECT * FROM Movie WHERE Title LIKE '%" + SN + "%'";
+  var myquery = "SELECT * FROM Movie WHERE Title LIKE '%" + SN + "%'";
   console.log(myquery);
   req.db.query(myquery, [SN], function(err, Movies) {
     if (err) return next(err);

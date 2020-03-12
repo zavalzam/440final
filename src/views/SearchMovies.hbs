@@ -19,6 +19,17 @@
 
 <script>
 
+document.getElementById("getButton").onclick = function(){
+
+	var mahlink = "/searchmovies/name/";
+	mahlink += document.getElementById("SearchName").value;
+
+	window.location.assign(mahlink);
+//			console.log(mahlink);
+
+};
+
+
 	document.getElementById("spellbookbtn").onclick = function(){
 		var mahlink = window.location.pathname;
 		mahlink += "/spellbook";
