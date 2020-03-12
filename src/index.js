@@ -112,6 +112,21 @@ app.get('/books', connectDb, function(req, res, next) {
   close(req);
 });
 
+app.get('/books/:BookID', connectDb, function(req, res, next) {
+  let BookID = req.params.BookID;
+  console.log(BookID);
+  req.db.query('SELECT * FROM Book WHERE BookID = ?', [BookID], function(err, Books) {
+    if (err) return next(err);
+    if (Books.length === 0) {
+      res.render('404');
+    } else {
+      console.log(Books);
+      res.render('RenderBook', {Books});
+    }
+    close(req);
+  });
+});
+
 app.get('/games', connectDb, function(req, res, next) {
 
   req.db.query('SELECT * FROM VideoGame', function(err, Games) {
@@ -119,6 +134,21 @@ app.get('/games', connectDb, function(req, res, next) {
     if (err) throw error;
   })
   close(req);
+});
+
+app.get('/games/:GameID', connectDb, function(req, res, next) {
+  let GameID = req.params.GameID;
+  console.log(GameID);
+  req.db.query('SELECT * FROM Game WHERE GameID = ?', [GameID], function(err, Games) {
+    if (err) return next(err);
+    if (Game.length === 0) {
+      res.render('404');
+    } else {
+      console.log(Games);
+      res.render('RenderGame', {Games});
+    }
+    close(req);
+  });
 });
 
 app.get('/franchises', connectDb, function(req, res, next) {
