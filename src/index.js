@@ -73,12 +73,8 @@ app.get('/searchmovies/:SearchName', connectDb, function(req, res, next) {
   console.log(SN);
   req.db.query(' SELECT * FROM Movie WHERE Movie.Title LIKE "%?%" ', [SN], function(err, Movies) {
     if (err) return next(err);
-    if (Movies.length === 0) {
-      res.render('404');
-    } else {
       console.log(Movies);
-      res.render('RenderMovie', {Movies});
-    }
+      res.render('Movies', {Movies});
     close(req);
   });
 });
