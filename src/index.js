@@ -85,12 +85,51 @@ app.get('/searchshows', connectDb, function(req, res, next) {
   res.render('SearchShows');
 });
 
+app.get('/searchshows/name/:SearchName', connectDb, function(req, res, next) {
+  let SN = req.params.SearchName;
+  console.log(SN);
+  var myquery = "SELECT * FROM TvShow WHERE Title LIKE '%" + SN + "%'";
+  console.log(myquery);
+  req.db.query(myquery, [SN], function(err, Shows) {
+    if (err) return next(err);
+      console.log(Shows);
+      res.render('Shows', {Shows});
+    close(req);
+  });
+});
+
 app.get('/searchbooks', connectDb, function(req, res, next) {
   res.render('SearchBooks');
 });
 
+app.get('/searchnooks/name/:SearchName', connectDb, function(req, res, next) {
+  let SN = req.params.SearchName;
+  console.log(SN);
+  var myquery = "SELECT * FROM Book WHERE Title LIKE '%" + SN + "%'";
+  console.log(myquery);
+  req.db.query(myquery, [SN], function(err, Books) {
+    if (err) return next(err);
+      console.log(Books);
+      res.render('Books', {Books});
+    close(req);
+  });
+});
+
 app.get('/searchgames', connectDb, function(req, res, next) {
   res.render('SearchGames');
+});
+
+app.get('/searchgames/name/:SearchName', connectDb, function(req, res, next) {
+  let SN = req.params.SearchName;
+  console.log(SN);
+  var myquery = "SELECT * FROM VideoGame WHERE Title LIKE '%" + SN + "%'";
+  console.log(myquery);
+  req.db.query(myquery, [SN], function(err, Games) {
+    if (err) return next(err);
+      console.log(Games);
+      res.render('Games', {Games});
+    close(req);
+  });
 });
 
 app.get('/movies/:MovieID', connectDb, function(req, res, next) {
