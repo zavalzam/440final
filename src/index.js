@@ -64,7 +64,7 @@ app.get('/movies', connectDb, function(req, res, next) {
   close(req);
 });
 
-app.get('/Movies/:MovieID', connectDb, function(req, res, next) {
+app.get('/movies/:MovieID', connectDb, function(req, res, next) {
   let MovieID = req.MovieID;
   req.db.query('SELECT * FROM Movie WHERE MovieID = ?', [MovieID], function(err, Movies) {
     if (err) return next(err);
