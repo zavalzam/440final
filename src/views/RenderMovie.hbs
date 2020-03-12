@@ -4,12 +4,12 @@
 </div>
 
 <div class="charTable">
-{{#each Movies }}
+{{#with Movies.[1] }}
     <h1> {{Title}} </h1>
 		<h1> {{Year}} </h1>
 		<h1> {{Length}} </h1>
 		<h1> {{Description}} </h1>
-{{/each}}
+{{/with}}
 
 <h1> Actors </h1>
 {{#each Movies }}
