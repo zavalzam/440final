@@ -4,11 +4,25 @@
 </div>
 
 <div class="charTable">
-{{#each Shows }}
+{{#with Shows.[1] }}
     <h1> {{Title}} </h1>
-		<h1> {{Rating}} </h1>
+		<h1> Year: {{Year}} </h1>
+		<h1> Length: {{Length}}min </h1>
+		<h1> {{Description}} </h1>
+{{/with}}
 
+</br>
+<h1> Actors </h1>
+{{#each Shows }}
+		<h1> {{Name}} </h1>
 {{/each}}
+
+</br>
+<h1> Genres </h1>
+{{#each Shows }}
+		<h1> {{Genre}} </h1>
+{{/each}}
+
 
 </div>
 

@@ -91,7 +91,7 @@ app.get('/shows', connectDb, function(req, res, next) {
 app.get('/shows/:ShowID', connectDb, function(req, res, next) {
   let ShowID = req.params.ShowID;
   console.log(ShowID);
-  req.db.query('SELECT * FROM TvShow WHERE ShowID = ?', [ShowID], function(err, Shows) {
+  req.db.query('SELECT * FROM TvShow, ActsInTv, TvShow_Genre WHERE TvShow.ShowID = ? AND ActsInTV.ShowID = TvShow.ShowID AND TvShow_Genre.MovieID = TvShow.ShowID', [ShowID], function(err, Shows) {
     if (err) return next(err);
     if (Shows.length === 0) {
       res.render('404');
