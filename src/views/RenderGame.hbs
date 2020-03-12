@@ -4,11 +4,18 @@
 </div>
 
 <div class="charTable">
-{{#each Games }}
+{{#with Games.[0] }}
     <h1> {{Title}} </h1>
-		<h1> {{Year}} </h1>
+		<h1> Year: {{Year}} </h1>
+		<h1> {{Description}} </h1>
+{{/with}}
 
+</br>
+<h1> Genres </h1>
+{{#each Games }}
+		<h1> {{Genre}} </h1>
 {{/each}}
+
 
 </div>
 
