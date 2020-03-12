@@ -4,9 +4,15 @@
 </div>
 
 <div class="charTable">
-{{#each Books }}
+{{#with Books.[1] }}
     <h1> {{Title}} </h1>
 		<h1> {{Year}} </h1>
+
+{{/with}}
+
+<h1> Genres </h1>
+{{#each Books }}
+    <h1> {{Name}} </h1>
 
 {{/each}}
 
