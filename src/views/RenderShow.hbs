@@ -1,15 +1,17 @@
 <body>
 	<div class="title">
-		<h1>Search For Shows</h1>
+		<h1>Movie Details!</h1>
 </div>
+
 <div class="charTable">
 {{#each Shows }}
-
-    <h1> <a href="/shows/{{ShowID}}" > {{Title}} </h1>
+    <h1> {{Title}} </h1>
+		<h1> {{Rating}} </h1>
 
 {{/each}}
 
 </div>
+
 	<div class="button">
 		<button type="button"><a href="/">Home</a></button>
 	</div>
