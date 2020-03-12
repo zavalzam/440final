@@ -67,7 +67,7 @@ app.get('/movies', connectDb, function(req, res, next) {
 app.get('/movies/:MovieID', connectDb, function(req, res, next) {
   let MovieID = req.params.MovieID;
   console.log(MovieID);
-  req.db.query('SELECT * FROM Movie WHERE MovieID = ?', [MovieID], function(err, Movies) {
+  req.db.query('SELECT * FROM Movie, ActsInMovie, Movie_GenreWHERE Movie.MovieID = 3 AND ActsInMovie.MovieID = Movie.MovieID AND Movie_Genre.MovieID = Movie.MovieID', [MovieID], function(err, Movies) {
     if (err) return next(err);
     if (Movies.length === 0) {
       res.render('404');
@@ -115,7 +115,7 @@ app.get('/books', connectDb, function(req, res, next) {
 app.get('/books/:BookID', connectDb, function(req, res, next) {
   let BookID = req.params.BookID;
   console.log(BookID);
-  req.db.query('SELECT * FROM Book WHERE BookID = ?', [BookID], function(err, Books) {
+  req.db.query('SELECT * FROM Book, Writes WHERE Book.BookID = ? AND Writes.BookID = Book.BookID', [BookID], function(err, Books) {
     if (err) return next(err);
     if (Books.length === 0) {
       res.render('404');
