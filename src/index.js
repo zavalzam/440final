@@ -139,7 +139,7 @@ app.get('/games', connectDb, function(req, res, next) {
 app.get('/games/:GameID', connectDb, function(req, res, next) {
   let GameID = req.params.GameID;
   console.log(GameID);
-  req.db.query('SELECT * FROM Game WHERE GameID = ?', [GameID], function(err, Games) {
+  req.db.query('SELECT * FROM VideoGame WHERE GameID = ?', [GameID], function(err, Games) {
     if (err) return next(err);
     if (Game.length === 0) {
       res.render('404');
