@@ -97,7 +97,7 @@ app.get('/shows/:ShowID', connectDb, function(req, res, next) {
       res.render('404');
     } else {
       console.log(Shows);
-      res.render('RenderShows', {Shows});
+      res.render('RenderShow', {Shows});
     }
     close(req);
   });
