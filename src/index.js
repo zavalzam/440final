@@ -65,19 +65,19 @@ app.get('/movies', connectDb, function(req, res, next) {
 });
 
 app.get('/searchmovies', connectDb, function(req, res, next) {
-  res.render(SearchMovies);
+  res.render('SearchMovies');
 });
 
 app.get('/searchshows', connectDb, function(req, res, next) {
-  res.render(SearchShows);
+  res.render('SearchShows');
 });
 
 app.get('/searchbooks', connectDb, function(req, res, next) {
-  res.render(SearchBooks);
+  res.render('SearchBooks');
 });
 
 app.get('/searchgames', connectDb, function(req, res, next) {
-  res.render(SearchGames);
+  res.render('SearchGames');
 });
 
 app.get('/movies/:MovieID', connectDb, function(req, res, next) {
