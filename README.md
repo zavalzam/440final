@@ -1,28 +1,5 @@
-# NodeJS Web Application Template
-This repository contains source code that can be used as a template for building a Node.js web application using Express, Handlebars, and MySQL. You can also use Forever to host the service. Be sure to install the required dependencies by running the following command:
+# Running The Server
+This repository contains source code for the Movies and Media front end website
 
-```
-npm install
-```
+The site uses node.js so npm is required. To run the server, first clone or copy the repo into somewhere that you have npm and node.js installed, such as the ENGR server. Open a bash shell, then navigate into the project folder. To run the server, simply run the command PORT=XXXX npm start. You can then navigate to the correct flip server with the port number you used and access the website. For example, http://flip2.engr.oregonstate.edu:4368/ where flip2 is the server we were on and 4368 is the port we selected
 
-You can then start the web application server by running the following command:
-
-```
-npm start
-```
-
-> **NOTE**: if you need to run the application on a different port, the following command is valid from a Bash terminal:
->
-> ```
-> PORT=<number> npm start
-> ```
-
-## A Note On `forever`
-We can use the `forever` library to run our Node.js applications in the background. This allows us to log off the ENGR server without terminating our web application. After installing the required dependencies, you can use the following commands to run the application using forever.
-
-| Action | Command |
-|---|---|
-| Start a new process | `npx forever start <file>` |
-| List running processes | `npx forever list` |
-| Stop a running process | `npx forever stop <index>` |
-| Stop all running proccesses | `npx forever stopall` |
